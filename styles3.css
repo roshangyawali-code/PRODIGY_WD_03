@@ -1,0 +1,101 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url('background.jpg') no-repeat center center fixed; /* Table texture image */
+    background-size: cover;
+}
+
+.game-container {
+    text-align: center;
+    background: rgba(228, 198, 198, 0.9); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+    background: url('background.jpg'); /* Table texture image */
+    background-size: cover;
+    border: 10px solid #8B4513; /* Brown border to resemble table edge */
+    border-radius: 10px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(240, 240, 240, 0.8); /* Slightly transparent to show the table texture */
+    border-radius: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cell.x {
+    color: #ff6347; /* Tomato color for X */
+}
+
+.cell.o {
+    color: #4682b4; /* SteelBlue color for O */
+}
+
+.cell.win {
+    position: relative;
+    animation: sparkle 1s infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff6347, 0 0 30px #ff6347, 0 0 40px #ff6347, 0 0 50px #ff6347, 0 0 60px #ff6347;
+    }
+    50% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #4682b4, 0 0 30px #4682b4, 0 0 40px #4682b4, 0 0 50px #4682b4, 0 0 60px #4682b4;
+    }
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ACB6E5, #74ebd5);
+    transform: translateY(-3px);
+}
